@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ir_remote_pro/logic/appConstants.dart';
-import 'package:ir_remote_pro/presentation/RemoteControl/TVRemoteControl.dart';
+import 'package:ir_remote_pro/presentation/pages/NewControl/NewControl.dart';
+import 'package:ir_remote_pro/presentation/pages/RemoteControl/TVRemoteControl.dart';
 
 class DeviceSelect extends StatelessWidget {
   const DeviceSelect({super.key});
@@ -13,7 +14,7 @@ class DeviceSelect extends StatelessWidget {
         title: const Text("Dispositivo"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
             Row(
@@ -21,9 +22,9 @@ class DeviceSelect extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const TVRemoteControl()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const NewControl(category: 'TV',)));
                   },
-                  child: SizedBox(
+                  child: const SizedBox(
                     height: 120,
                     width: 120,
                     child: Column(
@@ -35,7 +36,7 @@ class DeviceSelect extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 120,
                   width: 120,
                   child: Column(
